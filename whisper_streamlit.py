@@ -31,11 +31,11 @@ if wav_audio_data is not None:
         response=response.json()
         status.update(label="Done Transcribing!", state="complete", expanded=False)
 
-    # st.write(response.json()["text"])
+     st.write(response.json()["text"])
     if response is not None:
         st.write(response["text"])
         output_for_sa = {"inputs": response['text']}
-        # st.write(output_for_sa)
+         st.write(output_for_sa)
         sentiment = requests.post(API_URL_SA, headers=headers, json=output_for_sa)
         sentiment=sentiment.json()
         try:
@@ -45,17 +45,17 @@ if wav_audio_data is not None:
             return_value=False
     st.subheader("Sentiment")
     if sentiment is not None:
-        # st.write("Sentiment Positive Score : {sentiment}")
-        # st.write(sentiment)
+         st.write("Sentiment Positive Score : {sentiment}")
+         st.write(sentiment)
         if return_value==False:
             st.write("No sentiment detected")
         else:
             st.write("Positive Sentiment Score :blush: :" + str(positive_score))
             st.write("Negative Sentiment Score :unamused: :" + str(negative_score))
 
-# st.write(wav_audio_data)
-# if wav_audio_data is not None:
-#     st.audio(wav_audio_data, format='audio/wav')
-    # output = query(wav_audio_data)
+ st.write(wav_audio_data)
+ if wav_audio_data is not None:
+   st.audio(wav_audio_data, format='audio/wav')
+     output = query(wav_audio_data)
 
-    # st.write(wav_audio_data)
+    st.write(wav_audio_data)
