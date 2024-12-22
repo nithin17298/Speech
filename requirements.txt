@@ -10,7 +10,7 @@ audio-recorder-streamlit==0.0.8
 audioread==3.0.1
 blinker==1.6.3
 cachetools==5.3.1
-certifi==2023.7.22
+certifi==2024.7.4
 cffi==1.16.0
 charset-normalizer==3.3.0
 chex==0.1.83
